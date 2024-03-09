@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Рецепты
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="mb-4">Случайные 5 рецептов</h1>
+
+    <div class="row justify-content-center">
+        {% for recipe in recipes %}
+            <div class="col-4 mb-4">
+                <a class="text-decoration-none text-center" href="{% url 'recipe' recipe.id %}"><h2>{{ recipe.title }}</h2></a><br>
+                <img src="{% static recipe.image.url %}" alt="{{ recipe.title }}" width="100%">
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

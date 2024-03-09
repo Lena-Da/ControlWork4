@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Новый рецепт{% endblock %}
+
+{% block content %}
+
+    <h1>Редактирование рецепта</h1>
+    <form method="post" enctype='multipart/form-data' class="form w-50 mb-3">
+        {{ form.as_p }}
+        {% csrf_token %}
+         <button class="btn btn-primary">Сохранить</button>
+    </form>
+
+{% endblock %}

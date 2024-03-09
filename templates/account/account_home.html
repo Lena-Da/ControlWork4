@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Профиль {{ user.username }} {% endblock %}
+
+{% block content %}
+
+    <h1>Профиль {{ user.username }}</h1>
+    <p>Имя: {{ user.username }}</p>
+    <p>Последний визит: {{ user.last_login }}</p>
+
+{% endblock %}

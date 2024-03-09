@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Рецепт {{ recipe.title }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-7">
+            <h1>{{ recipe.title }}</h1>
+            <h4><b>Время приготовления:</b> {{ recipe.cook_time }} час</h4>
+            <h5 class="mb-2"><b>Автор:</b> {{ recipe.author }}</h5>
+            <hr class="w-75">
+            <p>{{ recipe.description }}</p>
+            <p><b>Шаги:</b> {{ recipe.steps }}</p>
+        </div>
+        <div class="col-5">
+            <img class="mb-3" src="{% static recipe.image.url %}" alt="{{ recipe.title }}" style="height: 400px"><br>
+            <a href="{% url 'change' recipe.id %}" class="text-center text-decoration-none"><h3>Редактировать</h3></a>
+        </div>
+    </div>
+{% endblock %}
